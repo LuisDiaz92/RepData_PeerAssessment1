@@ -4,7 +4,7 @@ output:
     keep_md: true
 ---
 
-Assignment 1 - Reprodusible Research
+Assignment 1 - Reproducible Research
 ====================================
 
 1) Loading and preprocessing the data
