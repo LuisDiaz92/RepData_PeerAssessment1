@@ -1,11 +1,10 @@
 ---
 output: md_document
 ---
-
 Assignment 1 - Reproducible Research
 ====================================
 
-## 1) Loading and preprocessing the data
+# 1) Loading and preprocessing the data
 
 The data is downloaded from the website and is located on the corresponding folder. Afterwards, it's unzipped and the missing values are ommited.
 
@@ -31,7 +30,7 @@ head(working_data)
 ## 294     0 2012-10-02       25
 ```
 
-## 2) What is mean total number of steps taken per day?
+# 2) What is mean total number of steps taken per day?
 
 First, the total number of daily steps is calculated by aggregating the steps for each day
 
@@ -46,8 +45,8 @@ hist(steps_day$x, col = "blue",
      main = "Steps taken in each day",
      xlab = "Steps per day")
 ```
+![unnamed-chunk-3-1.png]((Markdown_demo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
-![](Markdown_demo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 The mean and median number of steps are calculated. Here we observe that they are slightly different.
 
@@ -67,7 +66,7 @@ median(steps_day[,2], na.rm = TRUE)
 ## [1] 10765
 ```
 
-## 3) What is the average daily activity pattern?
+# 3) What is the average daily activity pattern?
 
 The average daily activity pattern is obtained by calculating the mean of the steps for each 5-minute interval.
 
@@ -80,8 +79,8 @@ plot(average_activity$Interval, average_activity$x, type = "l",
      ylab = "Avarage steps", 
      xlab = "5 minutes intervals")
 ```
+![unnamed-chunk-5-1.png]((Markdown_demo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
-![](Markdown_demo_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -97,7 +96,7 @@ print (max_interval)
 ## [1] 835
 ```
 
-## 4) Imputing missing values
+# 4) Imputing missing values
 
 The number of missing values is identified and tabulated.
 
@@ -178,8 +177,8 @@ hist(steps_day_imputed$x, col = "blue",
      main = "Steps taken in each day",
      xlab = "Steps per day")
 ```
+![unnamed-chunk-3-1.png]((Markdown_demo_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
-![](Markdown_demo_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 The mean and the median are reported, which right now are equal.
 
@@ -199,7 +198,7 @@ median(steps_day_imputed[,2], na.rm = TRUE)
 ## [1] 10766.19
 ```
 
-## 5) Are there differences in activity patterns between weekdays and weekends?
+# 5) Are there differences in activity patterns between weekdays and weekends?
 
 A new factor variable is created. This variable indicates if the specific date belongs  to a weekday or a weekend.
 
@@ -234,5 +233,5 @@ plot<- ggplot(activity_date, aes(x = interval , y = steps, color = datetype)) +
   facet_wrap(~datetype, ncol = 1, nrow=2)
 print(plot)
 ```
+![unnamed-chunk-3-1.png]((Markdown_demo_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
-![](Markdown_demo_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
